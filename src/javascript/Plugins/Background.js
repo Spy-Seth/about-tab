@@ -4,9 +4,16 @@ var _ = require("underscore");
 module.exports = Plugin.extend({
     name: "background",
     className: "background-plugin-container",
+    template: '<div class="effect"></div>',
 
     interval: 5000,
-    backgrounds: ["red", "blue", "green", "purple"],
+    backgrounds: [
+        "./images/backgrounds/100_IV_2560_1600.jpg",
+        "./images/backgrounds/solitary_wallpaper_by_solefield-d84kv3h.jpg",
+        "./images/backgrounds/Stones fhd 1920x1080.jpg",
+        "./images/backgrounds/Monte Vettore fhd 1920x1080.jpg",
+        "./images/backgrounds/lights in the night.jpg"
+    ],
 
     timer: null,
     index: 0,
@@ -15,12 +22,15 @@ module.exports = Plugin.extend({
         this.backgrounds = _.shuffle(this.backgrounds);
         this.render();
 
-        if (this.timer) {
-            window.clearInterval(this.timer);
-        }
+console.log("init");
 
         window.setTimeout(this.tickHandler, 0, this)
         this.timer = window.setInterval(this.tickHandler, this.interval, this);
+    },
+    render: function () {
+        this.$el.html(this.template);
+
+        return this;
     },
 
     tickHandler: function (self) {
@@ -39,6 +49,6 @@ module.exports = Plugin.extend({
     },
 
     changeBackground: function (index) {
-        this.$el.css("background-color", this.backgrounds[index]);
+        this.$el.css("background-image", "url('" + this.backgrounds[index] + "')");
     }
 });

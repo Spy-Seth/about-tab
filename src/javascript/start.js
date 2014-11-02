@@ -4,5 +4,5 @@ var $ = require("jquery");
 $(window).on('load', function () {
     console.log("Coucou");
 
-    var page = new AboutTabView({el: "#content"});
+    var page = new AboutTabView({el: "#root"});
 });
