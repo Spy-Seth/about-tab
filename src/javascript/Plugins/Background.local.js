@@ -2,11 +2,11 @@ var Plugin = require("../Core/Plugin");
 var _ = require("underscore");
 
 module.exports = Plugin.extend({
-    name: "background",
+    name: "background.local",
     className: "background-plugin-container",
     template: '<div class="effect"></div>',
 
-    interval: 5000,
+    interval: 30000,
     backgrounds: [
         "./images/backgrounds/100_IV_2560_1600.jpg",
         "./images/backgrounds/solitary_wallpaper_by_solefield-d84kv3h.jpg",
@@ -22,8 +22,6 @@ module.exports = Plugin.extend({
         this.backgrounds = _.shuffle(this.backgrounds);
         this.render();
 
-console.log("init");
-
         window.setTimeout(this.tickHandler, 0, this)
         this.timer = window.setInterval(this.tickHandler, this.interval, this);
     },
@@ -38,7 +36,7 @@ console.log("init");
     },
 
     tick: function () {
-        console.log('tick', this.backgrounds[this.index]);
+        //console.log('tick', this.backgrounds[this.index]);
 
         this.changeBackground(this.index);
 

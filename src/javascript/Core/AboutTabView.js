@@ -1,7 +1,7 @@
 var Backbone = require("backbone");
-Backbone.$ = require("jquery");
 var PluginList = require("./PluginsList");
-var BackgroundPlugin = require("../Plugins/Background");
+var LocalBackgroundPlugin = require("../Plugins/Background.local");
+var Clock = require("../Plugins/Clock")
 
 module.exports = Backbone.View.extend({
     template: '<div class="plugins-container"></div>',
@@ -10,7 +10,8 @@ module.exports = Backbone.View.extend({
     plugins: new PluginList(),
 
     initialize: function () {
-        this.plugins.add(new BackgroundPlugin());
+        this.plugins.add(new LocalBackgroundPlugin());
+        this.plugins.add(new Clock());
 
         this.render();
 
@@ -30,5 +31,4 @@ module.exports = Backbone.View.extend({
             self.pluginsContainerNode.append(plugin.$el);
         });
     }
-
 });

@@ -1,3 +1,6 @@
+var Backbone = require("backbone");
+Backbone.$ = require("jquery"); // TODO: replace jQuery by native implementation.
+
 var AboutTabView = require("./Core/AboutTabView");
 var $ = require("jquery");
 
