@@ -18,7 +18,7 @@
   "browserify-shim": {},
   "devDependencies": {
     "autoprefixer": "^4.0.0",
-    "browser-sync": "~1.8.2",
+    "browser-sync": "~1.8.3",
     "browserify": "~8.0.3",
     "browserify-shim": "~3.8.2",
     "gulp": "^3.8.10",
