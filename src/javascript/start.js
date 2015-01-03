@@ -1,11 +1,20 @@
+require("./init");
+
 var Backbone = require("backbone");
-Backbone.$ = require("jquery"); // TODO: replace jQuery by native implementation.
+var Marionette = require("backbone.marionette");
 
-var AboutTabView = require("./Core/AboutTabView");
-var $ = require("jquery");
+// Marionette Inspector
+if (window.__agent) {
+    window.__agent.start(Backbone, Marionette);
+}
 
+var $ = Backbone.$;
 $(window).on('load', function () {
-    console.log("Coucou");
+    "use strict";
 
-    var page = new AboutTabView({el: "#root"});
+    var Application = require("./CoreEngine/Application");
+    var app = new Application({rootNode: "#root"});
+    app.start();
+
+    console.log("app", app);
 });

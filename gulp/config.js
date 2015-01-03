@@ -40,8 +40,8 @@ module.exports = {
       dest: dest,
       outputName: 'app.js'
     }
-    //    , {
-    //  entries: './src/javascript/head.coffee',
+    //, {
+    //  entries: './src/javascript/head.js',
     //  dest: dest,
     //  outputName: 'head.js'
     //}

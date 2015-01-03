@@ -1,5 +1,4 @@
-var Plugin = require("../Core/Plugin");
-var _ = require("underscore");
+var Plugin = require("../CoreEngine/Plugin");
 var moment = require('moment');
 
 module.exports = Plugin.extend({
@@ -13,7 +12,7 @@ module.exports = Plugin.extend({
         this.render();
 
         window.setTimeout(this.tickHandler, 0, this)
-        this.timer = window.setInterval(this.tickHandler, 1000, this);
+        this.timer = window.setInterval(this.tickHandler, 100, this);
     },
 
     render: function () {
@@ -28,9 +27,9 @@ module.exports = Plugin.extend({
 
     tick: function () {
         var now = moment();
-        var formatedTime = now.format("LLLL");
+        var formatedTime = now.format("HH:mm");
 
-        console.log('tick', formatedTime);
+        //console.log('tick', formatedTime);
 
         this.$el.text(formatedTime);
     }
