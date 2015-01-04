@@ -2,8 +2,8 @@ var Marionette = require("backbone.marionette");
 
 module.exports = Marionette.LayoutView.extend({
     regions: {
-        "pluginsContainer": ".plugins-container",
-        "configurationsContainer": ".configurations-container"
+        "pluginsContainer": ".plugins-loader-container",
+        "configurationsContainer": ".configurations-manager-container"
     },
 
     getPluginsContainerRegion: function () {

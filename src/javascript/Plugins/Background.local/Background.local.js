@@ -1,4 +1,4 @@
-var Plugin = require("../CoreEngine/Plugin");
+var Plugin = require("../../CoreEngine/Plugin");
 var _ = require("underscore");
 
 module.exports = Plugin.extend({

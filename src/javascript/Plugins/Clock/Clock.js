@@ -1,4 +1,4 @@
-var Plugin = require("../CoreEngine/Plugin");
+var Plugin = require("../../CoreEngine/Plugin");
 var moment = require('moment');
 
 module.exports = Plugin.extend({
